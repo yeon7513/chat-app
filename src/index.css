@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* common font-family */
+@import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareNeo', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+body {
+  color: #333;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  transition: 0.3s;
+}
+input {
+  appearance: none;
+  border: 0;
+  outline: 0;
+}
