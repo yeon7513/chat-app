@@ -1,5 +1,5 @@
 {
-  "name": "realtime-chatting",
+  "name": "chat-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -42,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://yeon7513.github.io/realtime-chatting/"
+  "homepage": "https://yeon7513.github.io/chat-app/"
 }
