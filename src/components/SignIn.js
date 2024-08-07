@@ -11,7 +11,7 @@ function SignIn({ auth }) {
 
   return (
     <div className={styles.container}>
-      <button className={styles.signIn}>
+      <button className={styles.signIn} onClick={signInWithGoogle}>
         <FcIcons.FcGoogle />
         <span>구글로 로그인하기</span>
       </button>

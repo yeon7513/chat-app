@@ -4,3 +4,7 @@
   max-width: 450px;
   outline: 1px dotted red;
 }
+
+h1 {
+  font-size: 16px;
+}

@@ -5,17 +5,18 @@ import {
   collection,
   getFirestore,
   limit,
+  onSnapshot,
   orderBy,
   query,
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCNC5tFVYV1iFZMqG0EKwStWqASUZPMzcM',
-  authDomain: 'chat-app-c6e14.firebaseapp.com',
-  projectId: 'chat-app-c6e14',
-  storageBucket: 'chat-app-c6e14.appspot.com',
-  messagingSenderId: '298698800534',
-  appId: '1:298698800534:web:b765b64d7efc13c809f1b7',
+  apiKey: 'AIzaSyDdJ_ttMXZG6VvMQHvgDfiiJDdorqitnGc',
+  authDomain: 'realtime-chatting-78ada.firebaseapp.com',
+  projectId: 'realtime-chatting-78ada',
+  storageBucket: 'realtime-chatting-78ada.appspot.com',
+  messagingSenderId: '934972727949',
+  appId: '1:934972727949:web:cf839e8040d9382f3778c4',
 };
 
 // Initialize Firebase
@@ -50,4 +51,19 @@ function getQuery(collectionName, options) {
   return q;
 }
 
-export { addDatas, getQuery, getUserAuth };
+async function getDatas(collectionName, setData) {
+  const q = query(
+    getCollection(collectionName),
+    orderBy('createdAt'),
+    limit(100)
+  );
+
+  const unsub = onSnapshot(q, (snapshot) => {
+    const data = snapshot.docs.map((doc) => doc.data());
+    setData(data);
+  });
+
+  return unsub;
+}
+
+export { addDatas, getDatas, getQuery, getUserAuth };
